@@ -1,3 +1,5 @@
+#### THIS IS THE OLD VERSION, SEE NEWER VERSION
+
 #### Detect mass comments ####
 library(FeatureHashing); library(Matrix); library(xgboost)
 library(quanteda)
