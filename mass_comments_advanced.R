@@ -112,7 +112,10 @@ find_near_duplicates <- function(df, doc_text, doc_name, sim_method = "cosine",
   # if you subset to just an upper diagonal matrix, you need the following line
   # output_matrix <- similarities[sort(unique(unlist(sapply(similarities, function(x){which(x>threshold)})))),
   #                               sort(sapply(similarities, function(x){any(x>threshold)}))]
-  
+
+  # fixing an issue with the subset in hte next step
+  similarities[is.na(similarities)] <- 0
+                                   
   output_matrix <- similarities[apply(similarities, MARGIN = 1, function(x){any(x>threshold)}),
                                 apply(similarities, MARGIN = 2, function(x){any(x>threshold)}),]
   
