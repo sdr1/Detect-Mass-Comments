@@ -185,8 +185,7 @@ find_near_duplicates <- function(df, doc_text, doc_name, sim_method = "cosine",
   
 }
 
-duplicate_output <- find_near_duplicates(df = small_comments, doc_text = "text",
-                     doc_name = "CommentID", sim_method = "jaccard", 
-                     threshold = 0.9,clstrs = 2,token_level = "word",
-                     seq_length = 50, walktrap=T)
-
+duplicate_output <- find_near_duplicates(df = df_test, doc_text = "wrds",
+                                         doc_name = "nms", sim_method = "cosine", 
+                                         threshold = 0.9,clstrs = 2,token_level = "word",
+                                         seq_length = 2, walktrap=F)
