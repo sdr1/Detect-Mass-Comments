@@ -114,4 +114,4 @@ simple_group_similarity <- function(df, doc_text = "text",
   return(comment_groups)
 }
 
-simple_group_similarity(df = df_test, doc_text = "words", doc_name = "nms",sim_method = "cosine")
+simple_group_similarity(df = df_test, doc_text = "wrds", doc_name = "nms",sim_method = "cosine")
