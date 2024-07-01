@@ -71,6 +71,10 @@ simple_group_similarity <- function(df, doc_text = "text",
   
   # Sort the rows so they're always alphabetical
   sorted_result <- data.frame(t(apply(result, 1, function(x) sort(x))))
+
+  # rename, so generic names work
+  sorted_result <- sorted_result %>%
+    rename(X1 = 1, X2 = 2)                                    
   
   # Pair up the rows, we'll use this later to create our groups of comments
   sorted_result$pairs <- c(paste0(sorted_result$X1, ";", sorted_result$X2))
